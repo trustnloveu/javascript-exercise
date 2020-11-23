@@ -50,18 +50,74 @@ const completion = ["josipa", "filipa", "marina", "nikola"];
 // }
 
 // solution 2 (pop)
-const solution = (participant, completion) => {
-  participant.sort();
-  completion.sort();
+// const solution = (participant, completion) => {
+//   participant.sort();
+//   completion.sort();
 
-  while (participant.length) {
-    let person = participant.pop();
-    if (person !== completion.pop()) {
-      console.log(person);
-      return person;
+//   while (participant.length) {
+//     let person = participant.pop();
+//     if (person !== completion.pop()) {
+//       console.log(person);
+//       return person;
+//     }
+//   }
+// };
+
+// solution 3 (hash 1)
+// function solution(participant, completion) {
+//   const hash = {};
+
+//   for (let val of participant) {
+//     if (!hash[val]) hash[val] = 0;
+//     hash[val]++;
+//   }
+
+//   const result = completion.forEach((val) => hash[val]--);
+
+//   for (let key in hash) if (hash[key]) return key;
+// }
+
+// solution 4 (hash 2)
+// function solution(participant, completion) {
+//   let ret = [];
+//   let hashed = [];
+//   participant.forEach((entry) => {
+//     hashed[entry] = hashed[entry] ? hashed[entry] + 1 : 1;
+//   });
+//   completion.forEach((entry) => {
+//     hashed[entry] = hashed[entry] - 1;
+//   });
+
+//   for (var key in hashed) {
+//     if (hashed[key] >= 1) return key;
+//   }
+// }
+
+// solution 5 (map 2)
+function solution(participant, completion) {
+  let key = new Map();
+
+  for (let i = 0; i < completion.length; i++) {
+    if (!key.has(completion[i])) {
+      key.set(completion[i], 1);
+    } else {
+      key.set(completion[i], key.get(completion[i]) + 1);
     }
   }
-};
+
+  for (let i = 0; i < participant.length; i++) {
+    if (!key.has(participant[i])) {
+      console.log(participant[i]);
+      return participant[i];
+    } else {
+      let count = key.get(participant[i]);
+      if (count === 0) {
+        console.log(participant[i]);
+        return participant[i];
+      } else key.set(participant[i], count - 1);
+    }
+  }
+}
 
 // another solution (???)
 // const solution = (participant, completion) =>
