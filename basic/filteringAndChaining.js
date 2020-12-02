@@ -25,7 +25,7 @@ const bundle = filtered.map((n) => {
   value: n;
 });
 
-// chaning
+// chaining
 const postiveNumbers = numbers
   .filter((n) => n >= 0)
   .map((n) => {
