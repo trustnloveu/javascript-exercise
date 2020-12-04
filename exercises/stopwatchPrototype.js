@@ -1,9 +1,9 @@
 function Stopwatch() {
   // initialize
-  let running,
-    startTime,
-    endTime,
-    duration = 0;
+  let duration = 0;
+  let running = false;
+  let startTime = null;
+  let endTime = null;
 
   // getter of properties
   Object.defineProperty(this, "duration", {
