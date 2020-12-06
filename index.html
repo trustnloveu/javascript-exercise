@@ -4,12 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For JavaScript Exercises</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/calendar.css" />
 </head>
 <body>
 
     <h1>Check the console whenever you change script source</h1>
+    <hr>
 
-    <script src="./basic/prototypicalInheritance.js"></script>
+    <!-- calendar -->
+    <div id="calander" class="calendar">
+        <div class="calendar_selector_con">
+            <!-- year(left) -->
+            <div class="year_selector" onclick="toggleSelect('years')">
+                <span id="current-year"></span>
+                <div id="years" class="years dropdown"></div>
+            </div>
+            
+            <!-- month(right) -->
+            <div class="month_selector" onclick="toggleSelect('months')">
+                <span id="current-month"></span>
+                <div id="months" class="months dropdown"></div>
+            </div>
+        </div>
+
+        <!-- date & day -->
+        <div class="calendar_day_con">
+            <!-- day of week -->
+            <div class="day_of_week">
+                <div class="day">일요일</div>
+                <div class="day">월요일</div>
+                <div class="day">화요일</div>
+                <div class="day">수요일</div>
+                <div class="day">목요일</div>
+                <div class="day">금요일</div>
+                <div class="day">토요일</div>
+            </div>
+
+            <!-- days -->
+            <div id="calendar-days" class="days">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="./exercises/calendar.js"></script>
 
 </body>
 </html>
