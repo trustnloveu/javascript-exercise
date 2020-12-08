@@ -47,6 +47,9 @@ function createYears() {
       document.getElementById("calendar-days").innerHTML = "";
 
       const selectedMonth = document.getElementById("month-value").innerText;
+      document.getElementById("year-value").innerText = i;
+
+      showMenu("years");
       loadDays(i, selectedMonth, currentDate);
     };
 
@@ -66,6 +69,9 @@ function createMonths() {
       document.getElementById("calendar-days").innerHTML = "";
 
       const selectedYear = document.getElementById("year-value").innerText;
+      document.getElementById("month-value").innerText = i + 1;
+
+      showMenu("months");
       loadDays(selectedYear, i + 1, currentDate);
     };
 
@@ -73,15 +79,15 @@ function createMonths() {
   }
 }
 
-// toggle 이벤트
-function toggleSelect(id) {
-  switch (id) {
-    case "years":
-      document.getElementById(id).classList.add("dropdown");
-      break;
-    case "months":
-      console.log("month clicked.");
-      break;
+// dropdown 이벤트 > open & close
+function showMenu(id) {
+  //   console.log(document.getElementById("years"));
+  const dropdown = document.getElementById(id).style;
+
+  if (dropdown.display === "none") {
+    dropdown.display = "block";
+  } else {
+    dropdown.display = "none";
   }
 }
 

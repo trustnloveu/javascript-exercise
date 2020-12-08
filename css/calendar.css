@@ -1,7 +1,24 @@
-.dropdown {
-  background-color: white;
-  display: block;
-  position: absolute;
+.calendar_btn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+  cursor: pointer;
+  font-size: 15pt;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.calendar_btn:focus {
+  border: none;
+  outline: none;
+}
+
+.calendar_btn:hover {
+  transition: 0.5s;
+  background-color: navy;
+  color: ivory;
+  cursor: pointer;
 }
 
 .calendar {
@@ -37,14 +54,6 @@
   border-color: transparent;
 }
 
-.year_selector:hover,
-.month_selector:hover {
-  transition: 0.5s;
-  background-color: navy;
-  color: ivory;
-  cursor: pointer;
-}
-
 .year_selector {
   background-color: chartreuse;
 }
@@ -58,14 +67,19 @@
   justify-content: space-between;
 }
 
-.years {
-  background-color: tomato;
+.years,
+.months {
+  background-color: white;
+  position: absolute;
+  margin-top: 20px;
+  width: 100px;
   display: none;
 }
 
-.months {
-  background-color: yellow;
-  display: none;
+.dropdown_item:hover,
+.dropdown_item:hover {
+  cursor: pointer;
+  background-color: tomato;
 }
 
 .days {

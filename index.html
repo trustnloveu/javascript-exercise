@@ -20,15 +20,18 @@
     <div id="calander" class="calendar">
         <div class="calendar_selector_con">
             <!-- year(left) -->
-            <div class="year_selector" onmouseover="toggleSelect('years')">
-                <span id="current-year"></span>
-                <div id="years" class="years"></div>
+            <div class="year_selector">
+                <button class="calendar_btn" onclick="showMenu('years')">
+                    <span id="current-year"></span>
+                </button>
+                <div id="years" class="years" style="display: none;"></div>
             </div>
-            
             <!-- month(right) -->
-            <div class="month_selector" onmouseover="toggleSelect('months')">
-                <span id="current-month"></span>
-                <div id="months" class="months"></div>
+            <div class="month_selector">
+                <button class="calendar_btn" onclick="showMenu('months')")>
+                    <span id="current-month"></span>
+                </button>
+                <div id="months" class="months" style="display: none;"></div>
             </div>
         </div>
 
