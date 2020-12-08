@@ -1,5 +1,7 @@
 .dropdown {
   background-color: white;
+  display: block;
+  position: absolute;
 }
 
 .calendar {
@@ -58,10 +60,12 @@
 
 .years {
   background-color: tomato;
+  display: none;
 }
 
 .months {
   background-color: yellow;
+  display: none;
 }
 
 .days {
@@ -70,5 +74,28 @@
 
 .week {
   display: flex;
+  justify-content: space-between;
+  text-align: center;
   background-color: lightgreen;
+}
+
+.lastDays {
+  background-color: limegreen;
+  width: 100%;
+  border: 1px solid mediumslateblue;
+  border-radius: 5px;
+}
+
+.currentDays {
+  background-color: moccasin;
+  width: 100%;
+  border: 1px solid mediumslateblue;
+  border-radius: 5px;
+}
+
+.nextDays {
+  background-color: oldlace;
+  width: 100%;
+  border: 1px solid mediumslateblue;
+  border-radius: 5px;
 }
