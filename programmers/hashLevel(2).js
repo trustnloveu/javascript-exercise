@@ -41,3 +41,42 @@ const clothes = [
 ];
 
 solution(clothes);
+
+// -------------------------------------------------------
+// reduce
+function solution1(clothes) {
+  return (
+    Object.values(
+      clothes.reduce((obj, t) => {
+        obj[t[1]] = obj[t[1]] ? obj[t[1]] + 1 : 1;
+        return obj;
+      }, {})
+    ).reduce((a, b) => a * (b + 1), 1) - 1
+  );
+}
+
+// map & getter - setter
+function solution(clothes) {
+  let answer = 1;
+  let map = new Map();
+  for (let i of clothes) {
+    map.has(i[1]) ? map.set(i[1], map.get(i[1]) + 1) : map.set(i[1], 2);
+  }
+  for (let i of map) {
+    answer *= i[1];
+  }
+  return answer - 1;
+}
+
+// for in
+function solution(clothes) {
+  let answer = 1;
+  let hashTable = {};
+  for (let i of clothes) {
+    hashTable[i[1]] = (hashTable[i[1]] || 1) + 1;
+  }
+  for (let i in hashTable) {
+    answer *= hashTable[i];
+  }
+  return answer - 1;
+}
